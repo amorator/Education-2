@@ -28,7 +28,7 @@ def project():
     p = app.sql.project_all()
     if p:
         return dumps(p, indent=4, ensure_ascii=False), 200
-    return 'Пустота...', 200
+    return None, 200
 
 @app.route('/projects/<int:id>', methods=['GET'])
 def project_id(id):
@@ -110,7 +110,7 @@ def worker():
     p = app.sql.worker_all()
     if p:
         return dumps(p, indent=4, ensure_ascii=False), 200
-    return 'Пустота...', 200
+    return None, 200
 
 @app.route('/workers/stats', methods=['GET'])
 def worker_stats():
